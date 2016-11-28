@@ -17,9 +17,23 @@ const simulate = function(quote) {
   quote.trigger('change:price', change);
 };
 
+var quoteData = [
+  {
+    symbol: "HUMOR",
+    price: 88.50
+  }, {
+    symbol: "CLOTH",
+    price: 81.70
+  }, {
+    symbol: "HABIT",
+    price: 98.00
+  }
+];
+
 $(document).ready(function() {
   var appView = new ApplicationView({
-    el: '#application'
+    el: $('#application'),
+    quoteData: quoteData
   });
 
   appView.render();

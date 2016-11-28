@@ -1,11 +1,10 @@
 import Backbone from 'backbone';
-import _ from 'underscore';
 
 var QuoteView = Backbone.View.extend({
   initialize: function(options) {
     this.quote = options.quote;
     // this.template = options.template;
-    this.template = _.template($('#tmpl-quote-view').html());
+    this.template = options.template;
   },
 
   render: function() {
@@ -15,3 +14,5 @@ var QuoteView = Backbone.View.extend({
     return this;
   }
 });
+
+export default QuoteView;
