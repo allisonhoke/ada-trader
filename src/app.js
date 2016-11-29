@@ -39,6 +39,10 @@ $(document).ready(function() {
   appView.render();
 
   setInterval(function() {
+    var allQuotes = appView.cardList;
+    allQuotes.forEach(function(quote) {
+      simulate(quote);
+    });
     // Call simulate() on each quote in the ApplicationView
   }, 1000);
 });

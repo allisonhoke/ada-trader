@@ -5,6 +5,10 @@ var QuoteView = Backbone.View.extend({
     this.quote = options.quote;
     // this.template = options.template;
     this.template = options.template;
+    this.on('change:price', function priceCallback(change) {
+      this.quote.price += change;
+      this.render();
+    });
   },
 
   render: function() {
